@@ -3,16 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Don-don-ziki</title>
+    <title>Rock Paper Scissors | Game</title>
     <link rel="stylesheet" href="./css/output.css" />
   </head>
   <body>
-    <section>
-      <div class="flex">
-        <h1>ROCK PAPER SCISSORS</h1>
-        <h2>2</h2>
-      </div>
-    </section>
+    <div id="gameZone">
+      <img class="js-hand" src="./img/paper.svg" alt="paper" />
+      <img class="js-hand" src="./img/scissors.svg" alt="scissors" />
+      <img class="js-hand" src="./img/rock.svg" alt="rock" />
+    </div>
+
+    <div id="proccessZone">
+      <img id="user" src="./img/choosing.svg" alt="choosing-user" />
+      <button id="reloadbtn">Reload</button>
+      <img id="ai" src="./img/choosing.svg" alt="choosing-ai" />
+    </div>
+
     <script type="module" src="./js/app.js"></script>
   </body>
 </html>
