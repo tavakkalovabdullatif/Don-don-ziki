@@ -1,4 +1,10 @@
-import { elAi, elHands, elUser } from "./html-elements.js";
+import {
+  elAi,
+  elGameZone,
+  elHands,
+  elProccessZone,
+  elUser,
+} from "./html-elements.js";
 
 // aichoose
 function aiChoose() {
@@ -10,6 +16,11 @@ function aiChoose() {
 // Procces zone
 function procces(bolean) {
   if (bolean) {
+    elGameZone.style.display = "none";
+    elProccessZone.style.display = "flex";
+  } else {
+    elGameZone.style.display = "flex";
+    elProccessZone.style.display = "none";
   }
 }
 
@@ -21,6 +32,7 @@ elHands.forEach((elHands) => {
 
     setTimeout(() => {
       elAi.src = `./img/${ai}.svg`;
+      procces(true);
     }, 1000);
   });
 });
