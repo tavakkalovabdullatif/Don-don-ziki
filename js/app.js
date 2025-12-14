@@ -35,7 +35,7 @@ elHands.forEach((elHands) => {
     setTimeout(() => {
       elAi.src = `./img/${ai}.svg`;
       const winner = checkWinner(user, ai);
-      console.log(winner);
+      alert(winner);
     }, 1000);
   });
 });
