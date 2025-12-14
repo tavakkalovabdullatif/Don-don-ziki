@@ -3,6 +3,7 @@ import {
   elGameZone,
   elHands,
   elProccessZone,
+  elReloadBtn,
   elUser,
 } from "./html-elements.js";
 
@@ -26,13 +27,19 @@ function procces(bolean) {
 
 elHands.forEach((elHands) => {
   elHands.addEventListener("click", (evt) => {
+    procces(true);
     const user = evt.target.alt;
     const ai = aiChoose();
     elUser.src = evt.target.src;
 
     setTimeout(() => {
       elAi.src = `./img/${ai}.svg`;
-      procces(true);
     }, 1000);
   });
+});
+
+// Reload game
+elReloadBtn.addEventListener("click", () => {
+  procces(false);
+  elAi.src = `./img/choosing.svg`;
 });
