@@ -17,11 +17,11 @@ function aiChoose() {
 // Procces zone
 function procces(bolean) {
   if (bolean) {
-    elGameZone.style.display = "none";
+    elGameZone.style.display = "hidden";
     elProccessZone.style.display = "flex";
   } else {
     elGameZone.style.display = "flex";
-    elProccessZone.style.display = "none";
+    elProccessZone.style.display = "hidden";
   }
 }
 
@@ -59,4 +59,5 @@ function checkWinner(user, ai) {
 elReloadBtn.addEventListener("click", () => {
   procces(false);
   elAi.src = `./img/choosing.svg`;
+  elUser.src = `./img/choosing.svg`;
 });
