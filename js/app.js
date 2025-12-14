@@ -17,11 +17,11 @@ function aiChoose() {
 // Procces zone
 function procces(bolean) {
   if (bolean) {
-    elGameZone.style.display = "hidden";
+    elGameZone.style.display = "none";
     elProccessZone.style.display = "flex";
   } else {
     elGameZone.style.display = "flex";
-    elProccessZone.style.display = "hidden";
+    elProccessZone.style.display = "none";
   }
 }
 
@@ -35,7 +35,7 @@ elHands.forEach((elHands) => {
     setTimeout(() => {
       elAi.src = `./img/${ai}.svg`;
       const winner = checkWinner(user, ai);
-      alert(winner);
+      console.log(winner);
     }, 1000);
   });
 });
@@ -59,5 +59,4 @@ function checkWinner(user, ai) {
 elReloadBtn.addEventListener("click", () => {
   procces(false);
   elAi.src = `./img/choosing.svg`;
-  elUser.src = `./img/choosing.svg`;
 });
