@@ -34,9 +34,26 @@ elHands.forEach((elHands) => {
 
     setTimeout(() => {
       elAi.src = `./img/${ai}.svg`;
+      const winner = checkWinner(user, ai);
+      console.log(winner);
     }, 1000);
   });
 });
+
+// Check winner
+function checkWinner(user, ai) {
+  if (user === ai) {
+    return "TIE";
+  } else if (user === "paper" && ai === "scissors") {
+    return "AI";
+  } else if (user === "scissors" && ai === "rock") {
+    return "AI";
+  } else if (user === "rock" && ai === "paper") {
+    return "AI";
+  } else {
+    return "USER";
+  }
+}
 
 // Reload game
 elReloadBtn.addEventListener("click", () => {
