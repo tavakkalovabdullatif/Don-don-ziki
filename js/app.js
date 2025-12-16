@@ -11,7 +11,27 @@ import {
   elAdvanced,
   elBacis,
   elModeChanger,
+  elScore,
 } from "./html-elements.js";
+
+// Mode changer
+let activeMode = "basic";
+
+function modeChanger() {
+  if (activeMode === "basic") {
+    activeMode = "advanced";
+    elAdvanced.style.display = "flex";
+    elBacis.style.display = "none";
+    elModeChanger.innerText = "basic";
+  } else {
+    activeMode = "basic";
+    elAdvanced.style.display = "none";
+    elBacis.style.display = "flex";
+    elModeChanger.innerText = "advanced";
+  }
+}
+
+elModeChanger.addEventListener("click", modeChanger);
 
 // aichoose
 function aiChoose() {
@@ -41,7 +61,7 @@ elHands.forEach((elHands) => {
     setTimeout(() => {
       elAi.src = `./img/${ai}.svg`;
       const winner = checkWinner(user, ai);
-      console.log(winner);
+      if (winner === "USER") changeScore();
     }, 1000);
   });
 });
@@ -113,22 +133,9 @@ modal.addEventListener("click", (e) => {
   }
 });
 
-// Mode changer
-let activeMode = "basic";
-
-function modeChanger() {
-  if (activeMode === "basic") {
-    activeMode = "advanced";
-    elAdvanced.style.display = "flex";
-    elBacis.style.display = "hidden";
-    elModeChanger.innerText = "basic";
-  } else {
-    activeMode = "basic";
-    elAdvanced.style.display = "hidden";
-    elBacis.style.display = "flex";
-    elModeChanger.innerText = "advanced";
-  }
-}
-
-elModeChanger.addEventListener("click", modeChanger());
+// start
 modeChanger();
+
+function changeScore() {
+  elScore.innerText = +elScore.innerText + 1;
+}

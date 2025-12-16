@@ -9,6 +9,7 @@ const rulesBtn = document.getElementById("rules");
 const modal = document.getElementById("default-modal");
 const elBacis = document.getElementById("basic");
 const elAdvanced = document.getElementById("advanced");
+const elScore = document.getElementById("score");
 const closeBtn = modal.querySelector("[data-modal-hide='default-modal']");
 
 export {
@@ -24,4 +25,5 @@ export {
   closeBtn,
   elAdvanced,
   elBacis,
+  elScore,
 };
