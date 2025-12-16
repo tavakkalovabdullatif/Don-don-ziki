@@ -17,11 +17,11 @@ function aiChoose() {
 // Procces zone
 function procces(bolean) {
   if (bolean) {
-    elGameZone.style.display = "none";
-    elProccessZone.style.display = "flex";
+    elGameZone.style.display = "hidden";
+    elProccessZone.style.display = "grid";
   } else {
-    elGameZone.style.display = "flex";
-    elProccessZone.style.display = "none";
+    elGameZone.style.display = "grid";
+    elProccessZone.style.display = "hidden";
   }
 }
 
