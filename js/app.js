@@ -5,6 +5,9 @@ import {
   elProccessZone,
   elReloadBtn,
   elUser,
+  modal,
+  rulesBtn,
+  closeBtn,
 } from "./html-elements.js";
 
 // aichoose
@@ -59,4 +62,21 @@ function checkWinner(user, ai) {
 elReloadBtn.addEventListener("click", () => {
   procces(false);
   elAi.src = `./img/choosing.svg`;
+});
+
+// Open/close modal
+
+rulesBtn.addEventListener("click", () => {
+  modal.classList.remove("hidden");
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
+
+// Fonni bosganda yopish
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.add("hidden");
+  }
 });
