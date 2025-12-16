@@ -4,10 +4,11 @@ const elAi = document.querySelector("#ai");
 const elReloadBtn = document.querySelector("#reloadbtn");
 const elGameZone = document.getElementById("gameZone");
 const elProccessZone = document.getElementById("proccessZone");
-const elAdvancedMode = document.getElementById("advancedMode");
-const elRules = document.getElementById("rules");
+const elModeChanger = document.getElementById("advancedMode");
 const rulesBtn = document.getElementById("rules");
 const modal = document.getElementById("default-modal");
+const elBacis = document.getElementById("basic");
+const elAdvanced = document.getElementById("advanced");
 const closeBtn = modal.querySelector("[data-modal-hide='default-modal']");
 
 export {
@@ -17,9 +18,10 @@ export {
   elReloadBtn,
   elProccessZone,
   elGameZone,
-  elAdvancedMode,
-  elRules,
+  elModeChanger,
   rulesBtn,
   modal,
   closeBtn,
+  elAdvanced,
+  elBacis,
 };

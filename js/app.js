@@ -8,6 +8,9 @@ import {
   modal,
   rulesBtn,
   closeBtn,
+  elAdvanced,
+  elBacis,
+  elModeChanger,
 } from "./html-elements.js";
 
 // aichoose
@@ -45,16 +48,45 @@ elHands.forEach((elHands) => {
 
 // Check winner
 function checkWinner(user, ai) {
+  const actions = {
+    paper: {
+      scissors: "AI",
+      rock: "USER",
+      spock: "USER",
+      lizard: "AI",
+    },
+    scissors: {
+      paper: "USER",
+      rock: "AI",
+      spock: "AI",
+      lizard: "USER",
+    },
+    rock: {
+      paper: "AI",
+
+      scissors: "USER",
+      spock: "AI",
+      lizard: "USER",
+    },
+    spock: {
+      paper: "AI",
+
+      rock: "USER",
+      scissors: "USER",
+      lizard: "AI",
+    },
+    lizard: {
+      paper: "USER",
+      rock: "AI",
+      scissors: "AI",
+      spock: "USER",
+    },
+  };
+
   if (user === ai) {
     return "TIE";
-  } else if (user === "paper" && ai === "scissors") {
-    return "AI";
-  } else if (user === "scissors" && ai === "rock") {
-    return "AI";
-  } else if (user === "rock" && ai === "paper") {
-    return "AI";
   } else {
-    return "USER";
+    return actions[user][ai];
   }
 }
 
@@ -80,3 +112,23 @@ modal.addEventListener("click", (e) => {
     modal.classList.add("hidden");
   }
 });
+
+// Mode changer
+let activeMode = "basic";
+
+function modeChanger() {
+  if (activeMode === "basic") {
+    activeMode = "advanced";
+    elAdvanced.style.display = "flex";
+    elBacis.style.display = "hidden";
+    elModeChanger.innerText = "basic";
+  } else {
+    activeMode = "basic";
+    elAdvanced.style.display = "hidden";
+    elBacis.style.display = "flex";
+    elModeChanger.innerText = "advanced";
+  }
+}
+
+elModeChanger.addEventListener("click", modeChanger());
+modeChanger();
