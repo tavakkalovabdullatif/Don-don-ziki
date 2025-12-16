@@ -18,7 +18,7 @@ function aiChoose() {
 function procces(bolean) {
   if (bolean) {
     elGameZone.style.display = "none";
-    elProccessZone.style.display = "grid";
+    elProccessZone.style.display = "flex";
   } else {
     elGameZone.style.display = "grid";
     elProccessZone.style.display = "none";

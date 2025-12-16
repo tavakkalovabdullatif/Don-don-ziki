@@ -5,20 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors | Game</title>
     <link rel="stylesheet" href="./css/output.css" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet" />
   </head>
-  <body>
-    <div class="">
-      <div id="gameZone">
-        <img class="js-hand" src="./img/paper.svg" alt="paper" />
-        <img class="js-hand" src="./img/scissors.svg" alt="scissors" />
-        <img class="js-hand" src="./img/rock.svg" alt="rock" />
+
+  <body class="w-full h-full bg-blue-950">
+    <div
+      class="flex items-center justify-between border border-[#565468] rounded-2xl shadow-xs hover:bg-neutral-secondary-mediumblock max-w-3xl p-6 ml-auto mr-auto my-14">
+      <img
+        class="w-[155]px h-[93]px"
+        src="./img/basic-logo.svg"
+        alt="basic-logo" />
+
+      <div
+        class="flex items-center flex-col border-white border-4 py-4 px-12 bg-white rounded-2xl text-center">
+        <span
+          class="text-[16px] font-semibold text-[#2a45c2] uppercase tracking-[2.5px] leading-none max-[500px]:text-[10px] max-[500px]:tracking-[1.56px] pb-2"
+          >SCORE</span
+        >
+        <strong
+          class="mb-3 text-[#565468] text-6xl font-semibold tracking-tight text-heading leading-8"
+          >0</strong
+        >
+      </div>
+    </div>
+    <div>
+      <div
+        id="gameZone"
+        class="flex flex-col items-center justify-center gap-7">
+        <div class="flex items-center justify-center gap-20">
+          <img
+            class="js-hand transition-shadow hover:shadow-[0px_0px_0px_27px_rgba(255,255,255,0.05)] rounded-full place-self-center"
+            src="./img/paper.svg"
+            alt="paper" />
+          <img
+            class="js-hand transition-shadow hover:shadow-[0px_0px_0px_27px_rgba(255,255,255,0.05)] rounded-full place-self-center"
+            src="./img/scissors.svg"
+            alt="scissors" />
+        </div>
+        <img
+          class="js-hand transition-shadow hover:shadow-[0px_0px_0px_27px_rgba(255,255,255,0.05)] rounded-full place-self-center"
+          src="./img/rock.svg"
+          alt="rock" />
+      </div>
+
+      <div
+        class="flex items-center justify-end gap-2 shadow-xs hover:bg-neutral-secondary-mediumblock max-w-3xl p-6 ml-auto mr-auto my-14 absolute right-20 bottom-3">
+        <button
+          id="rules"
+          type="button"
+          class="text-center p-3.5 min-w-[100px] uppercase rounded-lg text-[#ffffff] shadow-[0px_3px_3px_0px_rgba(0,0,0,0.20)] bg-none border transition-colors hover:bg-white hover:text-black">
+          RULES
+        </button>
+        <button
+          id="advancedMode"
+          type="button"
+          class="text-center p-3.5 min-w-[100px] uppercase rounded-lg text-[#ffffff] shadow-[0px_3px_3px_0px_rgba(0,0,0,0.20)] bg-none border transition-colors hover:bg-white hover:text-black">
+          ADVANCED
+        </button>
       </div>
     </div>
 
-    <div id="proccessZone" class="hidden inline-block">
-      <img id="user" src="./img/choosing.svg" alt="choosing-user" />
-      <button id="reloadbtn">Reload</button>
-      <img id="ai" src="./img/choosing.svg" alt="choosing-ai" />
+    <div id="proccessZone" class="hidden justify-center items-center gap-6">
+      <img
+        id="user"
+        class="transition-all w-[200px] h-[200px] rounded-full shadow-[0px_3px_3px_0px_rgba(0,0,0,0.20)]"
+        src="./img/choosing.svg"
+        alt="choosing-user" />
+
+      <div>
+        <h3
+          class="font-bold text-[56px] mb-4 text-white leading-none uppercase drop-shadow-[0px_3px_3px_rgba(0,0,0,0.20)]">
+          You <span id="statusText"></span>
+        </h3>
+        <button
+          id="reloadbtn"
+          type="button"
+          class="text-center p-[15px] min-w-[220px] uppercase rounded-lg text-[#3b4262] shadow-[0px_3px_3px_0px_rgba(0,0,0,0.20)] bg-white transition-colors hover:text-[#db2e4d]">
+          PLAY AGAIN
+        </button>
+      </div>
+      <img
+        id="ai"
+        class="transition-all w-[200px] h-[200px] rounded-full shadow-[0px_3px_3px_0px_rgba(0,0,0,0.20)]"
+        src="./img/choosing.svg"
+        alt="choosing-ai" />
     </div>
 
     <script type="module" src="./js/app.js"></script>
